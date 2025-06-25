@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- <h2>About.py</h2> -->
+
+<div class="code-wrapper line-numbers">
+    <button id="run-about-btn" class="run-btn" onclick="showDevCard()">▶️ Run</button>
+
+    {% raw %}
+<pre class="line-numbers"><code class="language-python">class Developer:
+    def __init__(self):
+        self.name = "Shekhar Katkar"
+        self.title = "Python Full-Stack Developer"
+        self.experience = "2 years"
+        self.description = (
+            "Building intelligent, data-driven web apps with Python, Flask, SQL, and AI. "
+            "Experienced in APIs, databases, and tools like LangChain & RAG."
+        )
+        self.photo = "/static/images/your-photo.png"
+        self.passion_text = "Solving real-world problems with data and AI."
+
+    def passion(self):
+        return self.passion_text
+
+    def __str__(self):
+        return f"""
+            👨‍💻 Developer Info
+            Name         : {self.name}
+            Title        : {self.title}
+            Experience   : {self.experience}
+            Photo        : {self.photo}
+            Description  : {self.description}
+            Passion      : {self.passion()}
+        """.strip()
+
+dev = Developer()
+print(dev)
+</code></pre>
+{% endraw %}
+
+</div>
+
+<div id="dev-card" class="dev-card">
+  <div class="dev-info">
+    <h3>👨‍💻 Developer Info</h3>
+    <p><strong>Name:</strong> Shekhar Katkar</p>
+    <p><strong>Title:</strong> Python Full-Stack Developer</p>
+    <p><strong>Experience:</strong> 2 years</p>
+    <p><strong>Description:</strong> Building intelligent, data-driven web apps with Python, Flask, SQL, and AI. 
+        Experienced in APIs, databases, and tools like LangChain & RAG.</p>
+    <p><strong>Passion:</strong> Solving real-world problems with data and AI.</p>
+  </div>
+  <div class="dev-photo">
+    <img src="/static/images/photo.jpg" alt="Shekhar Katkar">
+  </div>
+</div>
+
+{% endblock %}

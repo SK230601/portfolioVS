@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Projects/</h2>
+
+
+<div class="project">
+  <div class="project-header">
+    <h3>🧠 SKIN Sleuth - Skin Cancer classification</h3>
+    <a href="https://github.com/SK230601/SkinSleuth" target="_blank" class="github-btn">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+  </div>
+  {% raw %}
+<pre class="line-numbers"><code class="language-none">Skin Sleuth: An end-to-end skin disease classification app using YOLOv8, optimized for real-time Android deployment.
+
+🧰 Tools & Technologies:
+- Ultralytics YOLOv8n-cls
+- Python, OpenCV, TensorFlow Lite
+- Android Studio, XML, Java/Kotlin
+- TFLite quantization & on-device inference
+
+🔧 Workflow:
+1. Data Preprocessing:
+   - Curated and cleaned skin lesion dataset (Benign, Melanoma, etc.)
+   - Performed normalization, resizing, and augmentation
+
+2. Model Training:
+   - Trained YOLOv8n-cls for skin disease classification
+   - Tuned hyperparameters for best accuracy
+
+3. Model Optimization:
+   - Converted model to TensorFlow Lite
+   - Applied post training quantization for lightweight deployment
+
+4. Android Integration:
+   - Integrated TFLite model into Android app
+   - Enabled real-time image classification using camera/gallery input
+
+🎯 Outcome:
+✅ Accurate, mobile-optimized skin cancer classification  
+✅ Operates offline, ideal for rural/low-connectivity areas  
+✅ Lightweight app with fast prediction speed
+</code></pre>
+{% endraw %}
+</div>
+
+
+<div class="project">
+  <h3>📷 FRAMS - Face Recognition Attendance Management System</h3>
+  {% raw %}
+<pre class="line-numbers"><code class="language-none">Worked as an python full stack developer for A real-time face recognition-based attendance system designed for GCCA.
+
+Workflow:
+- Face image Capture using Computer vision.
+- Face embedding generation via FaceNet
+- Matching against stored encodings for identity verification
+
+Core Features:
+✅ Live webcam capture and automatic attendance marking  
+✅ Secure login and user registration with facial data  
+✅ Attendance logs stored in MySQL with timestamps  
+✅ Admin panel for user management and record viewing  
+
+Tools & Tech:
+- Python, Flask, OpenCV, FaceNet
+- MySQL (for persistent storage)
+- HTML, CSS, Java-Script (for dashboard)
+
+Impact:
+✔️ Deployed in production with over 700+ active users  
+✔️ Improved attendance tracking efficiency and eliminated proxies
+</code></pre>
+{% endraw %}
+</div>
+
+{% endblock %}

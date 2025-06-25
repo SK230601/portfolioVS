@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{{ title if title else 'Portfolio' }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icons/image.png') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+    <!-- PrismJS Dark Theme -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="vscode-ui">
+
+        <!-- Moved App Topbar inside vscode-ui -->
+        <div class="app-topbar">
+            <img src="{{ url_for('static', filename='icons/vscode.png') }}" alt="VSCode" class="vscode-logo" />
+            <input type="text" class="search-bar" placeholder="🔍 Portfolio Web" />
+
+            <!-- Image-based window controls -->
+            <div class="window-controls">
+                <img src="{{ url_for('static', filename='icons/minimize.png') }}" alt="Minimize" class="control-btn">
+                <img src="{{ url_for('static', filename='icons/restoredown.png') }}" alt="Restore" class="control-btn">
+                <img src="{{ url_for('static', filename='icons/cross.png') }}" alt="Close"
+                    class="control-btn close-btn">
+            </div>
+        </div>
+
+        <div class="sidebar-and-content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <p class="explorer-label">
+                    <span class="left">EXPLORER</span>
+                    <span class="dots">⋯</span>
+                </p>
+                <ul>
+                    <li data-key="home" onclick="openTab(event, 'home')"><span>welcome.txt</span></li>
+                    <li data-key="about" onclick="openTab(event, 'about')"><span>about.py</span></li>
+                    <li data-key="skills" onclick="openTab(event, 'skills')"><span>skills.css</span></li>
+                    <li data-key="projects" onclick="openTab(event, 'projects')"><span>projects.txt</span></li>
+                    <li data-key="contact" onclick="openTab(event, 'contact')"><span>contact.js</span></li>
+                    <li>
+                        <a href="{{ url_for('static', filename='Shekhar_katkar_Resume.pdf') }}"
+                            target="_blank">resume.py</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="main-area">
+                <!-- Topbar -->
+                <div class="topbar">
+                </div>
+
+                <!-- Dynamic Page Content -->
+                <div class="main-content">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <div class="bottombar">
+            <div class="bottombar-left">
+                <img src="{{ url_for('static', filename='icons/remote.png') }}" alt="Remote Icon" class="remote-icon" />
+            </div>
+            <div class="bottombar-center">
+                <span>©2024_ShekharK. All rights reserved.</span>
+            </div>
+            <div class="bottombar-right">
+                <span>🐍 Python Full Stack</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <!-- PrismJS CSS (Theme) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+        rel="stylesheet" />
+
+    <!-- PrismJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+
+</html>

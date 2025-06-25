@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- <h2>contact.js</h2> -->
+
+<div class="code-wrapper line-numbers">
+  <button id="run-contact-btn" class="run-btn" onclick="showContactCard()">▶️ Run</button>
+
+  {% raw %}
+  <pre class="line-numbers"><code class="language-javascript">/**
+ * Let's connect!
+ * Run this code to generate your contact card!
+ */
+
+const contact = {
+    name: "Shekhar Katkar",
+    email: "shekharkatkar71@gmail.com",
+    phone: "+91-7517601437",
+    location: "Satara, India",
+    linkedin: "https://linkedin.com/in/shekharkatkar1",
+    github: "https://github.com/SK230601",
+};
+
+function renderContactCard(data) {
+    const card = document.createElement('div');
+    card.className = "contact-card";
+    card.innerHTML = `
+        <h3>📫 Contact Information</h3>
+        <p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>Email:</strong> <a href="mailto:${data.email}">${data.email}</a></p>
+        <p><strong>Phone:</strong> ${data.phone}</p>
+        <p><strong>Location:</strong> ${data.location}</p>
+        <p><strong>LinkedIn:</strong> <a href="${data.linkedin}" target="_blank">${data.linkedin}</a></p>
+        <p><strong>GitHub:</strong> <a href="${data.github}" target="_blank">${data.github}</a></p>
+        <p><strong>Portfolio:</strong> <a href="${data.portfolio}" target="_blank">${data.portfolio}</a></p>
+        <p>👋 Thanks for visiting! Feel free to reach out.</p>
+    `;
+    document.body.appendChild(card);
+}
+
+renderContactCard(contact);
+</code></pre>
+  {% endraw %}
+
+</div>
+
+<div id="contact-card" class="contact-card" style="display: none;">
+  <h3>📫 Contact Information</h3>
+  <p><strong>Name:</strong> Shekhar Katkar</p>
+  <p><strong>Email:</strong> shekharkatkar71@gmail.com</p>
+  <p><strong>Phone:</strong> +91-7517601437</p>
+  <p><strong>Location:</strong> Satara, India</p>
+
+  <div class="thanks-msg">👋 Thanks for visiting! Feel free to reach out.</div>
+
+  <div class="contact-icons">
+    <a href="mailto:shekharkatkar71@gmail.com" class="icon-btn" title="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://linkedin.com/in/shekharkatkar1" class="icon-btn" target="_blank" title="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/SK230601" class="icon-btn" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+</div>
+
+{% endblock %}
