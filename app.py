@@ -24,7 +24,10 @@ def skills():
 
 @app.route('/resume')
 def resume():
-    return send_from_directory(directory=os.path.join(app.root_path, 'files'), filename='resume.pdf')
+    return send_from_directory(
+        directory=os.path.join(app.root_path, 'files'),
+        path='resume.pdf'
+    )
 
 if __name__ == '__main__':
     app.run(debug=True)
